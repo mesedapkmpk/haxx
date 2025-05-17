@@ -1,6 +1,6 @@
 -- join our discord server
 -- https://discord.gg/HjZKVFk2ue
-local version = "2.4.8"
+local version = "2.5(final)"
 local fe = string.reverse("mom ruoy kcuf")
 print(fe)
 
@@ -57,7 +57,7 @@ if btn == "Match" then
 local names = {"Delete", "Remove", "Tool", "Equip", "Destroy", "Change", "Parent", "Clean", "Clear","Bullet", "Bala", "Shoot", "Shot", "Fire", "Segway", "Handless", "Sword", "Attack", "Despawn", "Unspawn", "Deletar", "Apagar"}
 if char:FindFirstChild("Body Colors") then
 blurefct(20)
-Notify("Vulnerability Checker", "Looking up for remotes, may take a while.", 3)
+Notify("Vulnerability Checker", "looking for remotes and vulnerable scripts, may take a while :D", 3)
 for _, service in pairs(checkIn) do
 for i,v in pairs(game:GetService(service):GetDescendants()) do
 for _, str in pairs(names) do
@@ -86,14 +86,14 @@ end
 end
 
 if sent == false then
-Notify("Vulnerability Checker", "This game is not vulnerable/supported.", 5)
+Notify("Vulnerability Checker", "This game has not infected by our scripts :(", 5)
 blurefct(0)
 end
 
 elseif btn == "All" then
 if char:FindFirstChild("Body Colors") then
 blurefct(20)
-Notify("Vulnerability Checker", "Looking up for remotes, may take a while.", 3)
+Notify("Vulnerability Checker", "Looking up for vulnerable scripts, may take a while :D", 3)
 for i,v in pairs(game:GetDescendants()) do
 if v:IsA("RemoteEvent") then
 print("Checking " .. v.Name)
@@ -118,7 +118,7 @@ end
 end
 
 if sent == false then
-Notify("Vulnerability Checker", "This game is not vulnerable/supported.", 5)
+Notify("Vulnerability Checker", "This game is not infected by remote scripts", 5)
 blurefct(0)
 end
 end
@@ -562,7 +562,7 @@ game:GetService("Players").PlayerAdded:Connect(function(plr)
 UpdatePlrs("Add", plr.DisplayName)
 for i,v in pairs(bannedPlayers) do
 if plr.DisplayName == v then
-Notify("Banned User", plr.Name .. " Tried to join the game", 5)
+Notify("Banned User", plr.Name .. " Tried to join the game lOl", 5)
 work(plr)
 end
 end
@@ -649,7 +649,7 @@ end
 end
 end)
 
-AddCommand("Naked", function()
+AddCommand("Naked(sus)", function()
 for i,v in pairs(GetPlayer(player.Text)) do
 if game:GetService("Players")[v].Character:FindFirstChildOfClass("Shirt") then
 task.spawn(function()
@@ -669,12 +669,12 @@ end
 end
 end)
 
-AddCommand("Btools", function()
+AddCommand("delete tools", function()
 local Tool = Instance.new("Tool",game.Players.LocalPlayer.Backpack)
 local Equipped = false
 
 Tool.RequiresHandle = false
-Tool.Name = "Destroy Tool"
+Tool.Name = "Destroy Tool(by qpkkidd)"
 local Field = Instance.new("SelectionBox",game.Workspace)
 local Mouse = game.Players.LocalPlayer:GetMouse()
 Field.LineThickness = 0.1
@@ -824,7 +824,7 @@ end
 end
 end)
 
-AddCommand("Ragdoll", function()
+AddCommand("Ragdoll(buggy)", function()
 for i,v in pairs(GetPlayer(player.Text)) do
 task.spawn(function()
 e = game:GetService("Players")[v].Character:FindFirstChild("Humanoid")
@@ -838,7 +838,7 @@ local toggle = false
 AddCommand("WsLock", function()
 if toggle == false then
 game.CoreGui.destruct.main.scripts.WsLock.Text = "UnWsLock"
-Notify("Workspace Locked", "New instances will be automatically deleted", 5)
+Notify("ws Locked", "New players will be automatically deleted from the server", 5)
 wslock = true
 toggle = true
 elseif toggle == true then
@@ -1219,7 +1219,7 @@ end
 end
 end)
 
-AddCommand("Explorer", function()
+AddCommand("Explorer(old)", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/itzyaboyluq/destructedhex/main/explorer.lua"))()
 end)
 
@@ -1261,7 +1261,7 @@ end)
 end
 end
 
-text.Text = "Script: 011_luq & UI: awtch\nForce admin commands in-game without needing to worry about Filtering Enabled\nUse the internal GUI to execute commands\nVersion: "..version.."\nCommands: "..count
+text.Text = "Script by apkkidd & GUI by apk_mpk\nuse admin and troll cmds without worrying about filtering enabled\nUse the GUI to execute commands\nVersion: "..version.."\nhow many cmds my script have: "..count
 
 end
 end
