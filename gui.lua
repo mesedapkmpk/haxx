@@ -1297,7 +1297,7 @@ local function fadeGuiObject(guiObject, targetTransparency, duration)
 end
 
 -- CoreGui altındaki GUI'yi bul
-local screenGui = destruct
+local screenGui = main
 if not screenGui then
     warn("ScreenGui bulunamadı.")
     return
