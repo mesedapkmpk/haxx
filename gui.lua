@@ -1262,35 +1262,38 @@ if not char then return end
 end)
 
 -- Fade işlevi (manuel tween gibi çalışır)
+local originalTransparency = {}
+
 local function fadeGuiObject(guiObject, targetTransparency, duration)
+    if not originalTransparency[guiObject] then
+        originalTransparency[guiObject] = {
+            Background = guiObject.BackgroundTransparency or 0,
+            Text = guiObject:IsA("TextLabel") or guiObject:IsA("TextButton") or guiObject:IsA("TextBox") and guiObject.TextTransparency or 0,
+            Image = guiObject:IsA("ImageLabel") or guiObject:IsA("ImageButton") and guiObject.ImageTransparency or 0
+        }
+    end
+
     local steps = 20
     local delayTime = duration / steps
 
     for i = 1, steps do
-        local t = i / steps
-        local value = targetTransparency
-        if targetTransparency == 0 then
-            value = 1
-        else
-            value = 1
-        end
+        local alpha = i / steps
+        local v = (targetTransparency == 1) and alpha or (1 - alpha)
 
         pcall(function()
-            if guiObject:IsA("TextLabel") or guiObject:IsA("ImageButton") or guiObject:IsA("TextBox") then
-                guiObject.TextTransparency = value
-                guiObject.BackgroundTransparency = value
-		TextLabel.BackgroundTransparency = 1.000
-		ImageButton.BackgroundTransparency = 1.000
+            if guiObject:IsA("TextLabel") or guiObject:IsA("TextButton") or guiObject:IsA("TextBox") then
+                guiObject.TextTransparency = originalTransparency[guiObject].Text + (1 - originalTransparency[guiObject].Text) * v
+                guiObject.BackgroundTransparency = originalTransparency[guiObject].Background + (1 - originalTransparency[guiObject].Background) * v
             elseif guiObject:IsA("ImageLabel") or guiObject:IsA("ImageButton") then
-                guiObject.ImageTransparency = value
-                guiObject.BackgroundTransparency = value
+                guiObject.ImageTransparency = originalTransparency[guiObject].Image + (1 - originalTransparency[guiObject].Image) * v
+                guiObject.BackgroundTransparency = originalTransparency[guiObject].Background + (1 - originalTransparency[guiObject].Background) * v
             elseif guiObject:IsA("Frame") then
-                guiObject.BackgroundTransparency = value
+                guiObject.BackgroundTransparency = originalTransparency[guiObject].Background + (1 - originalTransparency[guiObject].Background) * v
             end
         end)
 
-        wait(delayTime)
-    end
+        task.wait(delayTime)
+	end
 end
 
 -- CoreGui altındaki GUI'yi bul
