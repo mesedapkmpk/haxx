@@ -1259,86 +1259,22 @@ if not char then return end
 			work(instance)
 		end
 	end
-end)
-
--- Fade işlevi (manuel tween gibi çalışır)
-local originalTransparency = {}
-
-local function fadeGuiObject(guiObject, targetTransparency, duration)
-    if not originalTransparency[guiObject] then
-        originalTransparency[guiObject] = {
-            Background = guiObject.BackgroundTransparency or 0,
-            Text = guiObject:IsA("TextLabel") or guiObject:IsA("TextButton") or guiObject:IsA("TextBox") and guiObject.TextTransparency or 0,
-            Image = guiObject:IsA("ImageLabel") or guiObject:IsA("ImageButton") and guiObject.ImageTransparency or 0
-        }
-    end
-
-    local steps = 20
-    local delayTime = duration / steps
-
-    for i = 1, steps do
-        local alpha = i / steps
-        local v = (targetTransparency == 1) and alpha or (1 - alpha)
-
-        pcall(function()
-            if guiObject:IsA("TextLabel") or guiObject:IsA("TextButton") or guiObject:IsA("TextBox") then
-                guiObject.TextTransparency = originalTransparency[guiObject].Text + (1 - originalTransparency[guiObject].Text) * v
-                guiObject.BackgroundTransparency = originalTransparency[guiObject].Background + (1 - originalTransparency[guiObject].Background) * v
-            elseif guiObject:IsA("ImageLabel") or guiObject:IsA("ImageButton") then
-                guiObject.ImageTransparency = originalTransparency[guiObject].Image + (1 - originalTransparency[guiObject].Image) * v
-                guiObject.BackgroundTransparency = originalTransparency[guiObject].Background + (1 - originalTransparency[guiObject].Background) * v
-            elseif guiObject:IsA("Frame") then
-                guiObject.BackgroundTransparency = originalTransparency[guiObject].Background + (1 - originalTransparency[guiObject].Background) * v
-            end
-        end)
-
-        task.wait(delayTime)
-	end
+		
 end
+-- LocalScript (örneğin Logo butonunun içine koyabilirsiniz)
+  -- Logo adlı ImageButton
+local destructGui = destruct
 
--- CoreGui altındaki GUI'yi bul
-local screenGui = main
-if not screenGui then
-    warn("ScreenGui bulunamadı.")
-    return
-end
+local visible = true
 
-if not logo or not logo:IsA("ImageButton") then
-    warn("Logo (ImageButton) bulunamadı.")
-    return
-end
-
--- Başlangıç durumu
-local isVisible = true
--- Tıklama olayına bağlan
 logo.MouseButton1Click:Connect(function()
-    if isVisible = true then
-       for _, obj in ipairs(screenGui:GetDescendants()) do
-           if obj ~= main then
-             coroutine.wrap(function()
-                fadeGuiObject(obj, isVisible = false)
-    else
-	fadeGuiObject(obj isVisible = true)								
-           end)()      
-       end
+    visible = not visible
+    for _, obj in ipairs(destructGui:GetDescendants()) do
+        if obj:IsA("GuiObject") then
+            obj.Visible = visible
+        end
     end
 end)
-
-for _,btn in pairs(scripts:GetDescendants()) do 
-if btn:IsA("TextButton") then
-btn.MouseButton1Click:Connect(function()
-	game:GetService("TweenService"):Create(btn, TweenInfo.new(0.2), {
-		['BackgroundColor3'] = Color3.fromRGB(70, 70, 70);
-		['TextColor3'] = Color3.fromRGB(170, 170, 170);
-	}):Play();
-	wait(0.2)
-	game:GetService("TweenService"):Create(btn, TweenInfo.new(0.2), {
-		['BackgroundColor3'] = Color3.fromRGB(53, 53, 53);
-		['TextColor3'] = Color3.fromRGB(255, 255, 255);
-	}):Play();
-end)
-end
-end
 
 text.Text = "Script by apkkidd & GUI by apk_mpk\nuse admin and troll cmds without worrying about filtering enabled\nUse the GUI to execute commands\nVersion: "..version.."\nhow many cmds my script have: "..count
 
