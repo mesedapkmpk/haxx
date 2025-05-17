@@ -1,7 +1,7 @@
 -- join our discord server
 -- https://discord.gg/HjZKVFk2ue
-local version = "2.7"
-local fe = string.reverse("mom ruoy kcuf")
+local version = "3(fixed)"
+local fe = string.reverse("ymmom ruoy kcuf")
 print(fe)
 
 local StarterGui = game:GetService("StarterGui")
@@ -984,7 +984,7 @@ table.clear(viewing)
 end
 end)
 
-AddCommand("Shutdown", function()
+AddCommand("Shutdown(mayday)", function()
 sdown = true
 Notify("Shutdown", "Shutdowning server..", 5)
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
@@ -1047,7 +1047,7 @@ end)
 end
 end)
 
-AddCommand("NoScripts(only mayday)", function()
+AddCommand("NoScripts(mayday)", function()
 for i,v in pairs(game:GetDescendants()) do
 if v:IsA("Script") or v:IsA("LocalScript") then
 work(v)
@@ -1270,15 +1270,17 @@ local function fadeGuiObject(guiObject, targetTransparency, duration)
         local t = i / steps
         local value = targetTransparency
         if targetTransparency == 0 then
-            value = 1 - t
+            value = 1
         else
-            value = t
+            value = 1
         end
 
         pcall(function()
-            if guiObject:IsA("TextLabel") or guiObject:IsA("TextButton") or guiObject:IsA("TextBox") then
+            if guiObject:IsA("TextLabel") or guiObject:IsA("ImageButton") or guiObject:IsA("TextBox") then
                 guiObject.TextTransparency = value
                 guiObject.BackgroundTransparency = value
+		TextLabel.BackgroundTransparency = 1.000
+		ImageButton.BackgroundTransparency = 1.000
             elseif guiObject:IsA("ImageLabel") or guiObject:IsA("ImageButton") then
                 guiObject.ImageTransparency = value
                 guiObject.BackgroundTransparency = value
