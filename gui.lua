@@ -1315,10 +1315,10 @@ local isVisible = true
 logo.MouseButton1Click:Connect(function()
     isVisible = not isVisible
 
-    for _, child in ipairs(screenGui:GetChildren()) do
-        if child ~= logo then
+    for _, obj in ipairs(screenGui:GetDescendants()) do
+        if obj ~= logo then
             coroutine.wrap(function()
-                fadeGuiObject(child, isVisible and 0 or 1, 0.4)
+                fadeGuiObject(obj, isVisible and 0 or 1, 0.4)
             end)()
         end
     end
