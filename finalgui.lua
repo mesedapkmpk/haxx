@@ -1,6 +1,6 @@
 -- join our discord server
 -- https://discord.gg/HjZKVFk2ue
-local version = "2.6"
+local version = "2.7"
 local fe = string.reverse("mom ruoy kcuf")
 print(fe)
 
@@ -332,7 +332,7 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0.184615389, 0, 0, 0)
 ImageLabel.Size = UDim2.new(0, 25, 0, 25)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=388262491"
+ImageLabel.Image = "http://www.roblox.com/asset/?id=8388262491"
 ImageLabel.ScaleType = Enum.ScaleType.Fit
 
 scripts.Name = "scripts"
@@ -761,7 +761,7 @@ AddCommand("ClearBans", function()
 table.clear(bannedPlayers)
 end)
 
-AddCommand("ClearStarter", function()
+AddCommand("ClearStarter(only mayday)", function()
 task.spawn(function()
 for i,v in pairs(game:GetService("StarterGui"):GetDescendants()) do
 work(v)
@@ -791,7 +791,7 @@ table.remove(bannedPlayers, table.find(bannedPlayers, v))
 end
 end)
 
-AddCommand("Goto", function()
+AddCommand("teleport", function()
 for i,v in pairs(GetPlayer(player.Text)) do
 LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players")[v].Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -5)
 end
@@ -1047,7 +1047,7 @@ end)
 end
 end)
 
-AddCommand("NoScripts", function()
+AddCommand("NoScripts(only mayday)", function()
 for i,v in pairs(game:GetDescendants()) do
 if v:IsA("Script") or v:IsA("LocalScript") then
 work(v)
