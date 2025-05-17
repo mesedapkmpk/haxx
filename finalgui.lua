@@ -1,6 +1,6 @@
 -- join our discord server
 -- https://discord.gg/HjZKVFk2ue
-local version = "2.5(final)"
+local version = "2.51(final)"
 local fe = string.reverse("mom ruoy kcuf")
 print(fe)
 
@@ -332,7 +332,7 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0.184615389, 0, 0, 0)
 ImageLabel.Size = UDim2.new(0, 25, 0, 25)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=8388262491"
+ImageLabel.Image = "http://www.roblox.com/asset/?id=18356507301"
 ImageLabel.ScaleType = Enum.ScaleType.Fit
 
 scripts.Name = "scripts"
@@ -669,7 +669,7 @@ end
 end
 end)
 
-AddCommand("delete tools", function()
+AddCommand("delete tool", function()
 local Tool = Instance.new("Tool",game.Players.LocalPlayer.Backpack)
 local Equipped = false
 
