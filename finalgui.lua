@@ -1,6 +1,6 @@
 -- join our discord server
 -- https://discord.gg/HjZKVFk2ue
-local version = "2.51(final)"
+local version = "2.6"
 local fe = string.reverse("mom ruoy kcuf")
 print(fe)
 
@@ -332,7 +332,7 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0.184615389, 0, 0, 0)
 ImageLabel.Size = UDim2.new(0, 25, 0, 25)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=18356507301"
+ImageLabel.Image = "http://www.roblox.com/asset/?id=388262491"
 ImageLabel.ScaleType = Enum.ScaleType.Fit
 
 scripts.Name = "scripts"
@@ -1223,6 +1223,22 @@ AddCommand("Explorer(old)", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/itzyaboyluq/destructedhex/main/explorer.lua"))()
 end)
 
+AddCommand("brainrot gui", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Brainrot-decal-spam-and-more-38335"))()
+end)
+
+AddCommand("shedeletsky", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Shedletsky-skybox-decal-spam-and-particles-39207"))()
+end)
+
+AddCommand("fish.", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Client-Replication-Fish-decal-spam-38950"))()
+end)
+
+AddCommand("fly gui(qpkidd)", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mesedapkmpk/haxx/refs/heads/main/My%20Fly%20Gui.lua"))()
+end)
+		
 AddCommand("Baseplate", function()
 if not char then return end
 	local hum = char:FindFirstChildOfClass("Humanoid")
