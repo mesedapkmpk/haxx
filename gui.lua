@@ -1310,17 +1310,17 @@ end
 
 -- Başlangıç durumu
 local isVisible = true
-
 -- Tıklama olayına bağlan
 logo.MouseButton1Click:Connect(function()
-    isVisible = not isVisible
-
-    for _, obj in ipairs(screenGui:GetDescendants()) do
-        if obj ~= logo then
-            coroutine.wrap(function()
-                fadeGuiObject(obj, isVisible and 0 or 1, 0.4)
-            end)()
-        end
+    if isVisible = true then
+       for _, obj in ipairs(screenGui:GetDescendants()) do
+           if obj ~= main then
+             coroutine.wrap(function()
+                fadeGuiObject(obj, isVisible = false)
+    else
+	fadeGuiObject(obj isVisible = true)								
+           end)()      
+       end
     end
 end)
 
