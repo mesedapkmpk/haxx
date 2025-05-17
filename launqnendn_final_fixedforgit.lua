@@ -68,14 +68,14 @@ end
 end
 
 if sent == false then
-Notify("vulnerability checker", "this game is not vulnerable/hackable ( ˃̣⌓˂̣ ).", 5)
+Notify("vulnerability checker", "this game is not vulnerable/hackable", 5)
 blurefct(0)
 end
 
 elseif btn == "All(slow)" then
 if char:FindFirstChild("Body Colors") then
 blurefct(20)
-Notify("vulnerability checker", "you selected all so it will take some time ≽^•⩊•^≼", 7)
+Notify("vulnerability checker", "you selected all so it will take some time", 7)
 for i,v in pairs(game:GetDescendants()) do
 if v:IsA("RemoteEvent") then
 print("Checking " .. v.Name)
@@ -100,7 +100,7 @@ end
 end
 
 if sent == false then
-Notify("vulnerability checker", "this game is not vulnerable/hackable( ˃̣⌓˂̣ ).", 5)
+Notify("vulnerability checker", "this game is not vulnerable/hackable.", 5)
 blurefct(0)
 end
 end
