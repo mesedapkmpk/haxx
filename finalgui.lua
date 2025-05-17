@@ -229,7 +229,7 @@ logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 logo.BackgroundTransparency = 1.000
 logo.Position = UDim2.new(-0.350993365, 0, 0, 0)
 logo.Size = UDim2.new(0, 106, 0, 84)
-logo.Image = "http://www.roblox.com/asset/?id=8388262491"
+logo.Image = "http://www.roblox.com/asset/?id=7205866972"
 logo.ScaleType = Enum.ScaleType.Fit
 
 destruct.Name = "destruct"
@@ -315,7 +315,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0.292307675, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 134, 0, 25)
 TextLabel.Font = Enum.Font.Roboto
-TextLabel.Text = "Destructed_Hex's GUI"
+TextLabel.Text = "apk_mpk's fe GUI"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 17.000
 
