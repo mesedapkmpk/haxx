@@ -1,6 +1,6 @@
 -- join team skibidi toilet
 
-local version = "3.2 FINAL"
+local version = "3.3 FINAL"
 local linkg = "supported games list: https://pastebin.com/rc3eCBX2"
 print(linkg)
 setclipboard(tostring(linkg))
